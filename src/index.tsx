@@ -157,10 +157,14 @@ type CommonProps = {
    * Reference to FlatList, ScrollView or SectionList in order to execute its imperative methods.
    */
   innerRef: RefObject<FlatList | ScrollView | SectionList>;
-  /*
+  /**
    * Style to be applied to the container.
    */
   containerStyle?: Animated.AnimateStyle<ViewStyle>;
+  /**
+   * Render prop for additional overlapping component
+   */
+  renderOverlappingComponent: () => React.ReactNode;
 };
 
 type Props<T> = CommonProps &
@@ -176,6 +180,7 @@ export class ScrollBottomSheet<T extends any> extends Component<Props<T>> {
    */
   private masterDrawer = React.createRef<TapGestureHandler>();
   private drawerHandleRef = React.createRef<PanGestureHandler>();
+  private overlayComponentRef = React.createRef<PanGestureHandler>();
   private drawerContentRef = React.createRef<PanGestureHandler>();
   private scrollComponentRef = React.createRef<NativeViewGestureHandler>();
 
@@ -601,6 +606,7 @@ export class ScrollBottomSheet<T extends any> extends Component<Props<T>> {
       onSettle,
       animatedPosition,
       containerStyle,
+      renderOverlappingComponent,
       ...rest
     } = this.props;
     const AnimatedScrollableComponent = this.scrollComponent;
@@ -656,6 +662,15 @@ export class ScrollBottomSheet<T extends any> extends Component<Props<T>> {
               />
             </NativeViewGestureHandler>
           </Animated.View>
+        </PanGestureHandler>
+        <PanGestureHandler
+            ref={this.overlayComponentRef}
+            shouldCancelWhenOutside={false}
+            simultaneousHandlers={this.masterDrawer}
+            onGestureEvent={this.onHandleGestureEvent}
+            onHandlerStateChange={this.onHandleGestureEvent}
+        >
+          <Animated.View>{renderOverlappingComponent()}</Animated.View>
         </PanGestureHandler>
         {this.props.animatedPosition && (
           <Animated.Code
