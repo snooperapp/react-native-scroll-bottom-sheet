@@ -1,6 +1,6 @@
 {
   "name": "@snooper/rn-scroll-bottom-sheet",
-  "version": "0.6.2",
+  "version": "0.7.0",
   "private": false,
   "description": "Cross platform scrollable bottom sheet with virtualization support, running at 60 FPS and fully implemented in JS land",
   "main": "lib/commonjs/index.js",
