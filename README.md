@@ -1,5 +1,5 @@
 # Scroll Bottom Sheet
-[![npm](https://img.shields.io/npm/v/react-native-scroll-bottom-sheet?color=brightgreen)](https://www.npmjs.com/package/react-native-scroll-bottom-sheet)
+[![npm](https://img.shields.io/npm/v/react-native-scroll-bottom-sheet?color=brightgreen)](https://www.npmjs.com/package/@snooper/rn-scroll-bottom-sheet)
 [![npm bundle size](https://img.shields.io/bundlephobia/min/react-native-scroll-bottom-sheet)](https://bundlephobia.com/result?p=react-native-scroll-bottom-sheet)
 ![platforms: ios, android, web](https://img.shields.io/badge/platform-ios%2C%20android-blue)
 [![license MIT](https://img.shields.io/badge/license-MIT-brightgreen)](https://github.com/rgommezz/react-native-scroll-bottom-sheet/blob/master/LICENSE)
@@ -30,12 +30,12 @@ Cross platform scrollable bottom sheet with virtualisation support and fully nat
 #### npm
 
 ```sh
-npm i react-native-scroll-bottom-sheet
+npm i @snooper/rn-scroll-bottom-sheet
 ```
 
 #### yarn
 ```sh
-yarn add react-native-scroll-bottom-sheet
+yarn add @snooper/rn-scroll-bottom-sheet
 ```
 
 If you don't use Expo, you also need to install [react-native-gesture-handler](https://github.com/software-mansion/react-native-gesture-handler) and [react-native-reanimated](https://github.com/software-mansion/react-native-reanimated) libraries along with this one.
@@ -61,11 +61,11 @@ import { TouchableOpacity as RNGHTouchableOpacity } from "react-native-gesture-h
 const BottomSheetTouchable = (props) => {
   if (Platform.OS === "android") {
     return (
-      <RNGHTouchableOpacity {...props} />
-    );
+      <RNGHTouchableOpacity; {...props} />;
+    )
   }
 
-  return <TouchableOpacity {...props} />
+  return; <TouchableOpacity; {...props} />
 };
 
 export default BottomSheetTouchable;
@@ -88,7 +88,7 @@ The below is an example using the core `FlatList` from React Native as the scrol
 ```tsx
 import React from 'react';
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
-import ScrollBottomSheet from 'react-native-scroll-bottom-sheet';
+import ScrollBottomSheet from '@snooper/rn-scroll-bottom-sheet';
 
 const windowHeight = Dimensions.get('window').height;
 
@@ -193,30 +193,30 @@ import { useDimensions } from '@react-native-community/hooks'
 
 const useOrientation = () => {
   const { width, height } = useDimensions().window;
-  
+
   if (height > width) {
     return 'portrait'
   }
-  
+
   return 'landscape'
-}
+};
 
 const OrientationAwareBS = () => {
 	const orientation = useOrientation();
 	const snapPoints = {
 		portrait: [...],
 		landscape: [...]
-	}
+	};
 
 	return (
-      <ScrollBottomSheet
- 		key={orientation}
-        componentType="FlatList"
-        snapPoints={snapPoints[orientation]}
-        initialSnapIndex={2}
+      <ScrollBottomSheet;
+ 		key={orientation};
+        componentType="FlatList";
+        snapPoints={snapPoints[orientation]};
+        initialSnapIndex={2};
         ...
-      />
-	);
+      />;
+	)
 }
 ```
 

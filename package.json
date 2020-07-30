@@ -1,5 +1,5 @@
 {
-  "name": "react-native-scroll-bottom-sheet",
+  "name": "@snooper/rn-scroll-bottom-sheet",
   "version": "0.6.2",
   "description": "Cross platform scrollable bottom sheet with virtualization support, running at 60 FPS and fully implemented in JS land",
   "main": "lib/commonjs/index.js",
@@ -28,13 +28,13 @@
     "cross-platform",
     "60FPS"
   ],
-  "repository": "https://github.com/rgommezz/react-native-scroll-bottom-sheet",
-  "author": "Raul Gomez Acuña <raulgdeveloper@gmail.com> (https://github.com/rgommezz)",
+  "repository": "https://github.com/snooperapp/react-native-scroll-bottom-sheet",
+  "author": "Heisenberg <ivanov@univ3rse.com> (https://github.com/CallMeHeisenberg)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rgommezz/react-native-scroll-bottom-sheet/issues"
+    "url": "https://github.com/snooperapp/react-native-scroll-bottom-sheet/issues"
   },
-  "homepage": "https://github.com/rgommezz/react-native-scroll-bottom-sheet#readme",
+  "homepage": "https://github.com/snooperapp/react-native-scroll-bottom-sheet#readme",
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
@@ -42,26 +42,26 @@
     "react-native-reanimated": "*"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^8.3.4",
-    "@react-native-community/bob": "^0.10.1",
-    "@react-native-community/eslint-config": "^0.0.7",
-    "@release-it/conventional-changelog": "^1.1.0",
-    "@types/jest": "^25.1.2",
-    "@types/react": "^16.9.19",
-    "@types/react-native": "0.61.10",
-    "commitlint": "^8.3.4",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "husky": "^4.0.1",
+    "@commitlint/config-conventional": "^9.1.1",
+    "@react-native-community/bob": "^0.16.2",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@release-it/conventional-changelog": "^1.1.4",
+    "@types/jest": "^26.0.7",
+    "@types/react": "^16.9.43",
+    "@types/react-native": "^0.63.2",
+    "commitlint": "^9.1.0",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
     "jest": "^25.1.0",
     "prettier": "^2.0.5",
-    "react": "~16.9.0",
-    "react-native": "^0.62.2",
-    "react-native-gesture-handler": "^1.6.1",
-    "react-native-reanimated": "^1.8.0",
-    "release-it": "^12.6.3",
-    "typescript": "^3.7.5"
+    "react": "^16.10.1",
+    "react-native": "^0.63.2",
+    "react-native-gesture-handler": "^1.7.0",
+    "react-native-reanimated": "^1.10.1",
+    "release-it": "^13.6.6",
+    "typescript": "^3.9.7"
   },
   "jest": {
     "preset": "react-native",

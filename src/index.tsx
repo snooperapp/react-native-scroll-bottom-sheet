@@ -664,11 +664,11 @@ export class ScrollBottomSheet<T extends any> extends Component<Props<T>> {
           </Animated.View>
         </PanGestureHandler>
         <PanGestureHandler
-            ref={this.overlayComponentRef}
-            shouldCancelWhenOutside={false}
-            simultaneousHandlers={this.masterDrawer}
-            onGestureEvent={this.onHandleGestureEvent}
-            onHandlerStateChange={this.onHandleGestureEvent}
+          ref={this.overlayComponentRef}
+          shouldCancelWhenOutside={false}
+          simultaneousHandlers={this.masterDrawer}
+          onGestureEvent={this.onHandleGestureEvent}
+          onHandlerStateChange={this.onHandleGestureEvent}
         >
           <Animated.View>{renderOverlappingComponent()}</Animated.View>
         </PanGestureHandler>
