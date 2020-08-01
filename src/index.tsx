@@ -662,7 +662,8 @@ export class ScrollBottomSheet<T extends any> extends Component<Props<T>> {
                 scrollEventThrottle={1}
                 contentContainerStyle={[
                   rest.contentContainerStyle,
-                  { paddingBottom: this.getNormalisedSnapPoints()[0] + extraBottomPadding },
+                  { paddingBottom:
+                      this.getNormalisedSnapPoints()[0] + extraBottomPadding },
                 ]}
               />
             </NativeViewGestureHandler>
