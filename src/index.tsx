@@ -165,6 +165,10 @@ type CommonProps = {
    * Render prop for additional overlapping component
    */
   renderOverlappingComponent: () => React.ReactNode;
+  /**
+   * Extra padding at bottom (pushing scroll up above recommended)
+   */
+  extraBottomPadding: number;
 };
 
 type Props<T> = CommonProps &
@@ -607,6 +611,7 @@ export class ScrollBottomSheet<T extends any> extends Component<Props<T>> {
       animatedPosition,
       containerStyle,
       renderOverlappingComponent,
+      extraBottomPadding,
       ...rest
     } = this.props;
     const AnimatedScrollableComponent = this.scrollComponent;
@@ -657,7 +662,7 @@ export class ScrollBottomSheet<T extends any> extends Component<Props<T>> {
                 scrollEventThrottle={1}
                 contentContainerStyle={[
                   rest.contentContainerStyle,
-                  { paddingBottom: this.getNormalisedSnapPoints()[0] },
+                  { paddingBottom: this.getNormalisedSnapPoints()[0] + extraBottomPadding },
                 ]}
               />
             </NativeViewGestureHandler>
